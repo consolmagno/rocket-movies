@@ -1,9 +1,10 @@
 import { Container } from "./style"
+import { Header } from "../../Components/Header"
 
 export function Preview(){
   return(
     <Container>
-      <h1>Hello Word</h1>
+        <Header/>
     </Container>
   )
 }

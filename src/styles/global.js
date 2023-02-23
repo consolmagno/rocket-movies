@@ -18,5 +18,7 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.OFFWHITE};
+    font-family: 'Roboto Slab', serif;
+
   }
 `
