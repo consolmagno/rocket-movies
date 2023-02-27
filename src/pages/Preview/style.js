@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 105px auto;
+  grid-template-rows: 116px auto;
   grid-template-areas:
     'header'
     'content';
@@ -23,6 +23,20 @@ export const Content = styled.div`
   > p {
     text-align: justify;
     margin-bottom: 16px;
+  }
+
+  > header {
+    display: flex;
+    align-items: baseline;
+    gap: 19px;
+
+    margin-bottom: 24px;
+
+    > h2 {
+      color: ${({ theme }) => theme.COLORS.OFFWHITE};
+      font-size: 36px;
+      font-weight: 500;
+    }
   }
 `
 

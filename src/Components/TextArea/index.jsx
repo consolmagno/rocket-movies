@@ -1,10 +1,9 @@
 import { Container } from "./style";
 
-export function Section({title, children}){
+export function TextArea({...rest}){
   return(
     <Container>
-      <h2>{title}</h2>
-      {children}
+      <textarea {...rest}/>
     </Container>
   )
 }
