@@ -1,9 +1,9 @@
 import {FiStar} from "react-icons/fi"
 import { Container } from "./style";
 
-export function Rank(){
+export function Rank({grade}){
   return(
-    <Container>
+    <Container grade={grade}>
       <FiStar/>
       <FiStar/>
       <FiStar/>
