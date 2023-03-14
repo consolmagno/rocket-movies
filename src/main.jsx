@@ -8,12 +8,13 @@ import GlobalStyles from './styles/global'
 
 import { Preview } from './pages/Preview'
 import { Create } from './pages/Create'
+import { Home } from './pages/Home'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Create/>
+      <Home/>
     </ThemeProvider>
   </React.StrictMode>,
 )

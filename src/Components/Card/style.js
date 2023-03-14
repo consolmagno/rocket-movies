@@ -22,6 +22,7 @@ export const Container = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin-bottom: 15px;
   }
 
   > .tags {
