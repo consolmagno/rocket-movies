@@ -29,7 +29,10 @@ export const Content = styled.div`
 
   > main {
     grid-area: content;
-    /* overflow-y: auto; */
+    /* width: 1137px;
+    height: 717px;
+    overflow-y: auto;
+    overflow-x: visible; */
 
     > .cards {
       display: grid;
