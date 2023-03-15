@@ -17,4 +17,6 @@ export const Container = styled.div`
     isPink ? theme.COLORS.PINK : theme.COLORS.BACKGROUND_900};
   color: ${({ theme, isPink }) =>
     isPink ? theme.COLORS.BACKGROUND_900 : theme.COLORS.PINK};
+
+  cursor: pointer;
 `
