@@ -8,7 +8,7 @@ export function Profile(){
   return(
     <Container>
       <header>
-        <ButtonText title="Voltar" icon={FiArrowLeft}/>
+        <ButtonText title="Voltar" icon={FiArrowLeft} nav="/"/>
       </header>
 
       <form>

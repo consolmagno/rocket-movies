@@ -18,7 +18,7 @@ export function SignUp(){
           <Input placeholder="E-mail" icon={FiMail}/>
           <Input placeholder="Senha" icon={FiLock}/>
           <ButtonFill isPink title='Cadastrar'/>
-          <ButtonText title='Voltar para o login' icon={FiArrowLeft}/>
+          <ButtonText title='Voltar para o login' icon={FiArrowLeft} nav="/"/>
         </form>
       </SignInText>
       <Background/>

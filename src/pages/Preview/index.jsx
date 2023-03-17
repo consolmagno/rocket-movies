@@ -12,7 +12,7 @@ export function Preview(){
         <Header/>
         <main>
           <Content>
-          <ButtonText icon={FiArrowLeft} title="Voltar"/>
+          <ButtonText icon={FiArrowLeft} title="Voltar" nav="/"/>
             <header>
               <h1>Interestellar</h1>
               <Rank/>

@@ -16,7 +16,7 @@ export function Create(){
       <main>
         <Form>
           <header>
-            <ButtonText  icon={FiArrowLeft} title="Voltar"/>
+            <ButtonText  icon={FiArrowLeft} title="Voltar" nav="/"/>
             <h1>Novo filme</h1>
           </header>
           <div>

@@ -1,5 +1,5 @@
 import {FiPlus} from "react-icons/fi"
-import { Container, Content } from "./style";
+import { Container, Content, NewMovie } from "./style";
 import {Header} from "../../Components/Header"
 import {ButtonFill} from "../../Components/ButtonFill"
 import { Card } from "../../Components/Card";
@@ -11,7 +11,10 @@ export function Home(){
       <Content>
         <header>
           <h1>Meus filmes</h1>
-          <ButtonFill isPink title="Adicionar filme" icon={FiPlus}/>
+          <NewMovie to="/create">
+            <FiPlus/>
+            Adicionar filme
+          </NewMovie>
         </header>
         <main>
           <div className="cards">
