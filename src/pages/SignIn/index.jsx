@@ -3,9 +3,18 @@ import { Input } from "../../Components/Input";
 import {FiMail, FiLock} from 'react-icons/fi'
 import { ButtonFill } from "../../Components/ButtonFill";
 import { ButtonText } from "../../Components/ButtonText";
-
+import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
 
 export function SignIn(){
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const {signIn} = useAuth();
+
+  function handleSignIn(){
+    signIn({email, password});
+  }
+
   return(
     <Container>
       <SignInText>
@@ -14,9 +23,9 @@ export function SignIn(){
         
         <h3>Faça seu login</h3>
         <form>
-          <Input placeholder="E-mail" icon={FiMail}/>
-          <Input placeholder="Senha" icon={FiLock}/>
-          <ButtonFill isPink title='Entrar'/>
+          <Input placeholder="E-mail" icon={FiMail} onChange={e => setEmail(e.target.value)}/>
+          <Input placeholder="Senha" icon={FiLock} onChange={e => setPassword(e.target.value)}/>
+          <ButtonFill isPink title='Entrar' onClick={handleSignIn}/>
           <ButtonText title='Criar conta' nav="/register"/>
         </form>
       </SignInText>

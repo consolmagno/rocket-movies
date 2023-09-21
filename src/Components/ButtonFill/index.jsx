@@ -4,6 +4,7 @@ export function ButtonFill({icon:Icon, isPink, title, ...rest}){
   return(
     <Container
       type="button"
+      {...rest}
       isPink={isPink}
     >
       {Icon && <Icon size={16}/>}
