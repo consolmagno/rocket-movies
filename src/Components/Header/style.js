@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   grid-area: header;
@@ -23,12 +22,12 @@ export const Container = styled.div`
   }
 `
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 9px;
 
-  > img {
+  > a img {
     width: 64px;
     height: 64px;
     border: 50%;
@@ -51,6 +50,7 @@ export const Profile = styled(Link)`
       font-weight: 400;
       font-size: 14px;
       line-height: 19px;
+      cursor: pointer;
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
   }
