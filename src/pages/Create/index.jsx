@@ -7,8 +7,21 @@ import { Input } from "../../Components/Input";
 import { TextArea } from "../../Components/TextArea";
 import { MovieItem } from "../../Components/MovieItem";
 import { ButtonFill } from "../../Components/ButtonFill";
+import { useState } from "react";
 
 export function Create(){
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  function handleAddTag(){
+    setTags(prevState => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  function handleDeleteTag(deleted){
+    setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
+
   return(
     <Container>
       <Header/>
@@ -26,8 +39,22 @@ export function Create(){
           <TextArea placeholder="Observações"/>
           <Section title="Marcadores">
             <div className="marker">
-              <MovieItem value="React"/>
-              <MovieItem isNew placeholder="Novo Marcador"/>
+              {
+                tags.map((tag, index) => (
+                  <MovieItem
+                    key={String(index)} 
+                    value={tag}
+                    onClick={() => handleDeleteTag(tag)}
+                  />
+                ))
+              }
+              <MovieItem 
+                isNew 
+                placeholder="Novo Marcador"
+                onChange={e => setNewTag(e.target.value)}
+                value = {newTag}
+                onClick={handleAddTag}
+              />
             </div>
           </Section>
           <div className="buttons">
