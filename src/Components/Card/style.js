@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: grid;
   gap: 15px;
   border-radius: 16px;
+  cursor: pointer;
 
   > h3 {
     font-family: 'Roboto Slab';
