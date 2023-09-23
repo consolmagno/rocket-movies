@@ -15,6 +15,10 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
+  input{
+    outline: none;
+  }
+
   body {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.OFFWHITE}

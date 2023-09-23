@@ -1,39 +1,34 @@
 import { Container, Profile } from "./style";
-import { Input } from "../Input";
 import {useAuth} from "../../hooks/auth";
 import { Link } from "react-router-dom";
 import {api} from "../../services/api";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export function Header(){
+export function Header({children}){
   const { signOut, user } = useAuth();
-  const [search, setSearch] = useState("");
-  const [notes, setNotes] = useState([]);
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
-  useEffect(() =>{
-    async function fetchNotes(){
-      const response = await api.get(`/notes?title=${search}`)
-      setNotes(response.data)
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    const confirm = window.confirm("Tem certeza que deseja sair?")
+    console.log(confirm)
+        if(confirm){
+            navigate("/");
+            signOut();
+        }
     }
-    fetchNotes();
-  }, [search]);
 
   return(
     <Container>
       <h1>RocketMovies</h1>
-
-      <Input 
-        placeholder='Pesquisar pelo título'
-        onChange = {(e) => setSearch(e.target.value)}
-      />
-      
+      {children}
       <Profile to='/profile'>
       <div>
           <strong>{user.name}</strong>
-          <span onClick={signOut}>sair</span>
+          <span onClick={handleLogout}>sair</span>
       </div>
       <Link to={"/profile"}>
         <img src={avatarUrl} alt={user.name} />

@@ -14,22 +14,40 @@ import {useAuth} from "../../hooks/auth";
 export function Preview(){
   const {user} = useAuth();
   const [data, setData] = useState();
+  const [userData, setUserData] = useState();
 
   const params = useParams();
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
- 
+  
+  
+  // useEffect(() => {
+  //   async function fetchUserData() {
+  //     try {
+  //       const responseNotes = await api.get(`/notes/${params.id}`);
+  //       setData(responseNotes.data);
+  //       const response = await api.get(`/users/${responseNotes.data.user_id}`);
+  //       setUserData(response.data)
+  //       console.log(userData.user)
+  //     } catch (err) {
+  //       console.log('error:', err)
+  //     }
+  //   }
+  //   fetchUserData()    
+  // }, [])
+
   useEffect(() => {
-    async function fetchNotes(){
+    async function fetchNotes() {
       const response = await api.get(`/notes/${params.id}`);
-      setData(response.data);
+      setData(response.data)
     }
     fetchNotes()
   }, [])
 
 
+
   return(
     <Container>
-        <Header/>
+        <Header></Header>
         {
           data &&
           <main>

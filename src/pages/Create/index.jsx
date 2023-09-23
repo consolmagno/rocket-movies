@@ -46,12 +46,16 @@ export function Create(){
       tags
     });
     alert("Nota criada com sucesso.")
-    navigate("/")
+    navigate(-1)
+  }
+
+  async function handleRemove(){
+    return navigate(-1)
   }
 
   return(
     <Container>
-      <Header/>
+      <Header></Header>
 
       <main>
         <Form>
@@ -94,7 +98,10 @@ export function Create(){
             </div>
           </Section>
           <div className="buttons">
-            <ButtonFill  title="Excluir filme"/>
+            <ButtonFill  
+              title="Excluir filme"
+              onClick={handleRemove}
+            />
             <ButtonFill  
               isPink 
               title="Salvar alterações"

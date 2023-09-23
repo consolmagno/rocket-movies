@@ -6,9 +6,10 @@ import { Card } from "../../Components/Card";
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { Input } from "../../Components/Input";
 
 export function Home(){
-  const [tags, setTags] = useState([]);
+  // const [tags, setTags] = useState([]);
   const [notes, setNotes] = useState([]);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -17,13 +18,13 @@ export function Home(){
     navigate(`/preview/${id}`)
   }
 
-  useEffect(() =>{
-    async function fetchTags(){
-      const response = await api.get("/tags");
-      setTags(response.data)
-    }
-    fetchTags();
-  }, []);
+  // useEffect(() =>{
+  //   async function fetchTags(){
+  //     const response = await api.get("/tags");
+  //     setTags(response.data)
+  //   }
+  //   fetchTags();
+  // }, []);
 
   useEffect(() =>{
     async function fetchNotes(){
@@ -33,9 +34,16 @@ export function Home(){
     fetchNotes();
   }, [search]);
 
+  console.log(search)
+
   return(
     <Container>
-      <Header/>
+      <Header>
+        <Input 
+          placeholder='Pesquisar pelo título'
+          onChange = {(e) => setSearch(e.target.value)}
+        />
+      </Header>
       <Content>
         <header>
           <h1>Meus filmes</h1>

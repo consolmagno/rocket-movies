@@ -25,7 +25,7 @@ export function SignUp(){
     api.post("/users", {name, email, password})
     .then(() => {
       alert("Usuário cadastrado com sucesso!");
-      navigate("/")
+      navigate(-1)
     })
     .catch( error =>{
       if(error.response){
@@ -46,7 +46,7 @@ export function SignUp(){
         <form>
           <Input placeholder="Nome" type="text" icon={FiUser} onChange = {e => setName(e.target.value)}/>
           <Input placeholder="E-mail" type="text" icon={FiMail} onChange = {e => setEmail(e.target.value)}/>
-          <Input placeholder="Senha" type="placeholder" icon={FiLock} onChange = {e => setPassword(e.target.value)}/>
+          <Input placeholder="Senha" type="password" icon={FiLock} onChange = {e => setPassword(e.target.value)}/>
           <ButtonFill isPink title='Cadastrar'  onClick={e => handleSignUp(e)}/>
           <ButtonText title='Voltar para o login' icon={FiArrowLeft} nav="/"/>
         </form>
