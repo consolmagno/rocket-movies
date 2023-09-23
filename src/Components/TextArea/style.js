@@ -11,5 +11,8 @@ export const Container = styled.div`
     border: none;
     padding: 16px 19px;
     resize: none;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    width: 100%;
   }
 `
+

@@ -15,7 +15,7 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
-  input{
+  input, textarea{
     outline: none;
   }
 
